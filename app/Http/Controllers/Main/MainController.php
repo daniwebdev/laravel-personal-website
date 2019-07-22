@@ -11,5 +11,7 @@ class MainController extends Controller
 
     function PublicProfile(Request $request) {
         $request->username;
+
+        return view('default.home');
     }
 }

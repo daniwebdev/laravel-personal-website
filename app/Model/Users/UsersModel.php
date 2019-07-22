@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class UsersModel extends Model
 {
-    //
     protected $table = 'users';
 
     function get_data($id) {
@@ -34,4 +33,6 @@ class UsersModel extends Model
 
         return $user->save();
     }
+
+    
 }
