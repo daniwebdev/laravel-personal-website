@@ -13,7 +13,10 @@
 Auth::routes();
 
 Route::get('/', function () {
-    return view('default.home');
+    return view('public.blog');
+});
+Route::get('/single-post', function () {
+    return view('public.read');
 });
 
 Route::get('/@{username}', 'Main\MainController@PublicProfile');
