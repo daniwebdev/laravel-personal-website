@@ -209,11 +209,9 @@
                                                     <h4 class="card-title">Codding</h4>
                                                     <h6 class="card-subtitle text-muted">Subtitle</h6>
                                                     <br/>
-                                                    <p class="card-text">Level</p>
-                                                    <input class="level" placeholder="0" style="font-size: 18px; border: none; display: none"/>
-                                                    <div class="progress">
-                                                        <div class="progress-bar progress-bar-animated progress-bar-striped" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%</div>
-                                                    </div>
+                                                    {{-- <p class="card-text">Tingkat kemampuan</p> --}}
+                                                    <label for="range" class="label-range">Tingkat Kemampuan: <span>0</span></label>
+                                                    <input id="range" class="form-control range" min="0" max="100" placeholder="0" style="font-size: 18px; border: none;" type="range"/>
                                                 </div>
                                                 </div>
                                             </div>
@@ -489,16 +487,10 @@
     </script>
 
     <script>
-        $('.progress').click(function() {
-            $(this).parent().find('.level').show();
-            $(this).hide();
-        });
 
-        $(document).on('change', '.level', function() {
+        $('.range').on('input',function() {
             let val = $(this).val();
-            $(this).parent().find('.progress').show()
-            $(this).parent().find('.progress-bar').attr('style', 'width: '+val+'%;').text(val+'%');
-            $(this).hide();
+            $(this).parent().find('.label-range span').text(val);
         })
     </script>
 @endpush
